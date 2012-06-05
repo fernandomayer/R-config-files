@@ -1,0 +1,8 @@
+! configura o tipo de fonte e seu tamanho no emacs
+Emacs23.font: Monospace-12
+! configura a resolucao com que as janelas de grafico do R
+! serao abertas (em pixels). O 0+0 faz com que elas sempre
+! abram no conato superior direito (veja detalhes em ?X11)
+R_x11*geometry: 800x600+1920+0
+! sempre que editar esse arquivo carregue-o novamente com
+! xrdb -merge .Xresources
