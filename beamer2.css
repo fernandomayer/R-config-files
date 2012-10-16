@@ -1,0 +1,59 @@
+.background{
+  color: snow2 ;
+}
+.functioncall{
+  font-weight: 'bolder' ;
+  color: blue4 ;
+}
+.string{
+  color: darkslateblue ;
+}
+.number {
+  color: black;
+}
+.keyword {
+  font-weight: bolder;
+  color: black;
+}
+
+.argument {
+  color: #B04005;
+}
+
+.comment {
+  color: gray20 ;
+}
+
+.roxygencomment {
+  color: gray20 ;
+}
+
+.formalargs {
+  color: #B04005;
+}
+
+.eqformalargs {
+  color: #B04005;
+}
+
+.assignement {
+  font-weight: bolder;
+  color: #000000;
+}
+
+.package {
+  color: #96B525;
+}
+
+.slot {
+  font-style: italic;
+}
+
+.symbol {
+  color: #000000;
+}
+
+.prompt {
+  color: #333333;
+}
+
