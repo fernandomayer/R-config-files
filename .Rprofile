@@ -7,6 +7,7 @@ options(repos="http://cran-r.c3sl.ufpr.br",
 ## Default packages loaded at startup
 library(lattice)
 ## Lattice customizations
+# WARNING: this will open a new device by default
 trellis.par.set(box.rectangle = list(col = "black"),
                 box.umbrella = list(col = "black"),
                 box.dot = list(pch = "|"),
@@ -14,4 +15,5 @@ trellis.par.set(box.rectangle = list(col = "black"),
                 strip.shingle = list(col = "lightgray"),
                 plot.symbol = list(col = "black"),
                 plot.line = list(col = "black"),
-                plot.polygon = list(col = "grey"))
+                plot.polygon = list(col = "grey"),
+                warn = FALSE)
