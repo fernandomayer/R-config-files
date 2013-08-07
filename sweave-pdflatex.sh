@@ -1,13 +1,21 @@
 #!/bin/bash
-## run Sweave and pdflatex sequentially
-## This script is based in an example from Dirk Eddelbuettel in R-help
-## mailing list
-## https://stat.ethz.ch/pipermail/r-help/2003-April/033125.html
+
+## Run Sweave and pdflatex sequentially
 
 BASENAME=$(basename $1 .Rnw)
-			   
-RNWFILE=$BASENAME.Rnw
-echo "Sweave(\"$RNWFILE\")" | R --no-save --no-restore --quiet --slave
 
+echo
+echo -------------------------------------------------------------------
+echo Run Sweave in $BASENAME.Rnw
+echo -------------------------------------------------------------------
+echo
+RNWFILE=$BASENAME.Rnw
+Rscript -e "Sweave(\"$RNWFILE\")"
+
+echo
+echo -------------------------------------------------------------------
+echo Run pdfLaTeX in $BASENAME.Rnw
+echo -------------------------------------------------------------------
+echo
 LATEXFILE=$BASENAME.tex
 echo "$LATEXFILE" | pdflatex

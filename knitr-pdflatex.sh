@@ -1,10 +1,21 @@
 #!/bin/bash
-## run knitr and pdflatex sequentially
+
+## Run knitr and pdflatex sequentially
 
 BASENAME=$(basename $1 .Rnw)
-			   
-RNWFILE=$BASENAME.Rnw
-echo "require(knitr); knit(\"$RNWFILE\")" | R --no-save --no-restore --quiet --slave
 
+echo
+echo -------------------------------------------------------------------
+echo Run knitr in $BASENAME.Rnw
+echo -------------------------------------------------------------------
+echo
+RNWFILE=$BASENAME.Rnw
+Rscript -e "require(knitr); knit(\"$RNWFILE\")"
+
+echo
+echo -------------------------------------------------------------------
+echo Run pdfLaTeX in $BASENAME.Rnw
+echo -------------------------------------------------------------------
+echo
 LATEXFILE=$BASENAME.tex
 echo "$LATEXFILE" | pdflatex
