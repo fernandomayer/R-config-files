@@ -1,1 +1,4 @@
-R_LIBS=/home/fernando/R_environment/my_library
+R_LIBS=~/R_environment/my_library
+## Necessario para o SSD quando /tmp esta na RAM
+## Remover em HDs normais!!!
+TMPDIR=/var/tmp
