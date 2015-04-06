@@ -7,9 +7,9 @@ R_LIBS=~/R_environment/my_library
 R_DEFAULT_PACKAGES='datasets,utils,grDevices,graphics,stats,methods,lattice'
 # In local .Rprofile files you can append other packages, maintaining
 # this settings. To do this, use in your local .Rprofile:
-source("~/.Rprofile")
-options(defaultPackages = c(getOption("defaultPackages"),
-	"pkg1", "pkg2", [...]))
+# source("~/.Rprofile")
+# options(defaultPackages = c(getOption("defaultPackages"),
+# 	"pkg1", "pkg2", [...]))
 # The source (...) is needed to load the global .Rprofile. Note that if
 # you don't source it, then only the local .Rprofile will be read, since
 # the local has priority on R startup
