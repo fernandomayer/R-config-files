@@ -4,11 +4,13 @@ options(repos="http://cran-r.c3sl.ufpr.br",
         browser="/usr/lib/firefox/firefox")
         ## papersize="a4",
 	## width=72)
+
 ## Default packages loaded at startup
-library(lattice)
+# See the environment variable R_DEFAULT_PACKAGE in .Renviron
+
 ## Lattice customizations
 # WARNING: this will open a new device by default
-trellis.par.set(box.rectangle = list(col = "black"),
+lattice::trellis.par.set(box.rectangle = list(col = "black"),
                 box.umbrella = list(col = "black"),
                 box.dot = list(pch = "|"),
                 strip.background = list(col = "lightgray"),
