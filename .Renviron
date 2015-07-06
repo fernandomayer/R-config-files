@@ -14,6 +14,11 @@ R_DEFAULT_PACKAGES='datasets,utils,grDevices,graphics,stats,methods,lattice'
 # you don't source it, then only the local .Rprofile will be read, since
 # the local has priority on R startup
 
+## Speeding up R package installation process
+# Submit X jobs at onde, where X is the number of cores
+MAKE='make -j 8'
+
 ## This option is only necessary for SSDs and when /tmp is set to RAM
 ## DO NOT USE IT IN NORMAL HDs
 # TMPDIR=/var/tmp
+
