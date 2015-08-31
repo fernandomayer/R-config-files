@@ -1,7 +1,7 @@
 ## General options
 options(repos="http://cran-r.c3sl.ufpr.br",
         pdfviewer="/usr/bin/evince",
-        browser="/usr/lib/firefox/firefox")
+        browser="/usr/lib/chromium/chromium")
         ## papersize="a4",
 	## width=72)
 
