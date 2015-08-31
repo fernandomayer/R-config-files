@@ -1,5 +1,5 @@
 ## Personal R library folder
-R_LIBS=~/R_environment/my_library
+R_LIBS=~/R/library
 
 ## Set default packages at startup. The first six packages are R
 ## default. From there on are other packages you want to append at every
