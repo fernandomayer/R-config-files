@@ -10,7 +10,7 @@ echo Run knitr in $BASENAME.Rnw
 echo -------------------------------------------------------------------
 echo
 RNWFILE=$BASENAME.Rnw
-Rscript -e "require(knitr); knit(\"$RNWFILE\")"
+Rscript -e "knitr::knit(\"$RNWFILE\")"
 
 echo
 echo -------------------------------------------------------------------
@@ -19,3 +19,5 @@ echo -------------------------------------------------------------------
 echo
 LATEXFILE=$BASENAME.tex
 echo "$LATEXFILE" | pdflatex
+
+rm *.aux *.log *.out *.tex
