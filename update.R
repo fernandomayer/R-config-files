@@ -11,14 +11,14 @@ ups <- summary(up)
 
 cat("\n\n ==> Número de pacotes a serem atualizados\n\n")
 nup <- lapply(ups$Libs, function(x) x$upgrade)
-nup$Total <- sum(unlist(nup))
+nup$Total <- length(unlist(nup))
 nup
 
 Sys.sleep(5)
 
 cat(div, "\n", "==> Update Packages\n\n")
 
-if(sum(unlist(nup)) == 0) {
+if(length(unlist(nup)) == 0) {
     cat(" => Nenhum pacote a ser atualizado\n")
 } else {
     update.packages(ask = FALSE)
