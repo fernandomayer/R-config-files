@@ -1,9 +1,12 @@
 ## General options
 options(repos="http://cran-r.c3sl.ufpr.br",
         pdfviewer="/usr/bin/evince",
-        browser="/usr/lib/chromium/chromium")
+        browser="/usr/bin/google-chrome-stable")
         ## papersize="a4",
 	## width=72)
+
+if (interactive())
+  try(fortunes::fortune(), silent = TRUE)
 
 ## Default packages loaded at startup
 # See the environment variable R_DEFAULT_PACKAGE in .Renviron
