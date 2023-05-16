@@ -20,6 +20,12 @@ if(nup$Total == 0) {
     cat(" => No packages to be updated\n")
 } else {
     cat(div, "\n", "==> Update packages\n\n")
+    if("arrow" %in% nup) {
+        cat("\n => `arrow` detected, installing it first\n\n")
+        source("https://raw.githubusercontent.com/apache/arrow/master/r/R/install-arrow.R")
+        install_arrow()
+        cat("\n => continuing other packages\n\n")
+    }
     update.packages(ask = FALSE)
 }
 
