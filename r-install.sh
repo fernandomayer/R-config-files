@@ -22,12 +22,32 @@ echo
 echo Download and install R? [ 0/1 ]
 read opt
 if [ $opt -eq 1 ] ; then
-    echo Downloading R from cran-r.c3sl.ufpr.br
+    echo
+    echo Choose your mirror:
+    echo
+    select mir in UFPR Bristol
+    do
+        case $mir in
+            "UFPR")
+                MIRROR=https://cran-r.c3sl.ufpr.br
+                echo "Downloading R from $MIRROR"
+                break
+                ;;
+            "Bristol")
+                MIRROR=https://www.stats.bris.ac.uk/R
+                echo "Dowloading R from $MIRROR"
+                break
+                ;;
+            *)
+                echo "Choose 1 or 2"
+                ;;
+        esac
+    done
     echo
     echo New version number:
     read Rver
     cd ~/R
-    wget -O R-$Rver.tar.gz https://cran-r.c3sl.ufpr.br/src/base/R-4/R-$Rver.tar.gz
+    wget -O R-$Rver.tar.gz $MIRROR/src/base/R-4/R-$Rver.tar.gz
     echo
     echo Extracting R-$Rver.tar.gz
     tar -zxvf R-$Rver.tar.gz
