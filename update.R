@@ -5,8 +5,13 @@ args <- commandArgs(trailingOnly = TRUE)
 
 div <- paste0("##", paste(rep("=", 70), collapse=""))
 
+## Change repos according to location
+mirror <- "https://cran-r.c3sl.ufpr.br"
+## mirror <- "https://www.stats.bris.ac.uk/R"
+
+
 cat(div, "\n", "==> Package status\n\n")
-(up <- packageStatus())
+(up <- packageStatus(repositories = paste0(mirror, "/src/contrib/")))
 ups <- summary(up)
 
 cat("\n\n ==> Number of packages to be updated\n\n")
@@ -26,7 +31,7 @@ if(nup$Total == 0) {
         install_arrow()
         cat("\n => continuing other packages\n\n")
     }
-    update.packages(ask = FALSE)
+    update.packages(ask = FALSE, repos = mirror)
 }
 
 if(length(args) != 0) {
