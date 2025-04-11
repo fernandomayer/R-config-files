@@ -25,7 +25,7 @@ if [ $opt -eq 1 ] ; then
     echo
     echo Choose your mirror:
     echo
-    select mir in UFPR Bristol
+    select mir in UFPR Bristol Global
     do
         case $mir in
             "UFPR")
@@ -38,8 +38,13 @@ if [ $opt -eq 1 ] ; then
                 echo "Dowloading R from $MIRROR"
                 break
                 ;;
+            "Global")
+                MIRROR=https://cran.r-project.org/
+                echo "Dowloading R from $MIRROR"
+                break
+                ;;
             *)
-                echo "Choose 1 or 2"
+                echo "Choose one"
                 ;;
         esac
     done
