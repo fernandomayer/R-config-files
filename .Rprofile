@@ -1,12 +1,24 @@
 ## General options
-options(repos="http://cran-r.c3sl.ufpr.br",
-        pdfviewer="/usr/bin/evince",
-        browser="/usr/bin/google-chrome-stable")
-        ## papersize="a4",
-	## width=72)
+options(
+    repos = "https://cran-r.c3sl.ufpr.br",
+    ## repos = "https://www.stats.bris.ac.uk/R/",
+    pdfviewer = "/usr/bin/evince",
+    timeout = 600,
+    ## verbose = TRUE,
+    device = "cairo_pdf",
+    browser = "/usr/bin/opera"
+)
+## papersize="a4",
+## width=72)
 
-if (interactive())
-  try(fortunes::fortune(), silent = TRUE)
+.Last <- function() {
+    if(interactive()) {
+        try(savehistory(), silent = TRUE)
+    }
+}
+
+## if (interactive())
+##   try(fortunes::fortune(), silent = TRUE)
 
 ## Default packages loaded at startup
 # See the environment variable R_DEFAULT_PACKAGE in .Renviron
