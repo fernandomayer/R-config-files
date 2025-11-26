@@ -5,7 +5,18 @@ options(
     pdfviewer = "/usr/bin/evince",
     timeout = 600,
     ## verbose = TRUE,
-    device = "cairo_pdf",
+    ## device = function(file = "Rplots.pdf", ...) {
+    ##     grDevices::cairo_pdf(file = file, width = 8, height = 6)
+    ## },
+    ## NOTE: This ws needed when the default graphic's device got cracked in
+    ## GNOME Wayland. With this device, the graphics were just plotted in
+    ## Rplots.png, then I had to send dev.off() (binded to C-. in ESS), then
+    ## open the file in feh (the only program able to update the images as they
+    ## were plotted). After some time, tne graphics device worked again.
+    ## device = function(file = "Rplots.png", ...) {
+    ##     ragg::agg_png(file = file, width = 800, height = 600,
+    ##         pointsize = 12, res = 72 * 1.5, scaling = 1)
+    ## },
     browser = "/usr/bin/opera"
 )
 ## papersize="a4",
