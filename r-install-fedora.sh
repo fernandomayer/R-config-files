@@ -64,7 +64,7 @@ if [ $opt -eq 1 ] ; then
     MKL_LIB_PATH=/opt/intel/oneapi/mkl/latest/lib/intel64
     export LD_LIBRARY_PATH=$MKL_LIB_PATH:$LD_LIBRARY_PATH
     MKL="-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_core -lmkl_sequential"
-    ./configure --with-blas="$MKL" --with-lapack --enable-R-shlib
+    ./configure --with-blas="$MKL" --with-lapack --enable-R-shlib --enable-memory-profiling
     echo
     echo Is this Ok? [ 0/1 ]
     read opt
