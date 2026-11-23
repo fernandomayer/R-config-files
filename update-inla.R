@@ -26,7 +26,7 @@ if (inst != "not installed" && package_version(new) <= inst) {
     cat(sprintf(" => INLA %s is already the latest version\n", inst))
 } else {
     cat(sprintf(" => INLA installed: %s\n => INLA available: %s\n\n",
-                inst, new))
+        inst, new))
     if (confirm(" => Update INLA?")) {
         INLA::inla.update(testing = TRUE, ask = FALSE)
     } else {

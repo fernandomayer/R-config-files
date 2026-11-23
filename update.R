@@ -27,8 +27,8 @@ if (is.null(old)) {
     cat(" => No packages to be updated\n")
 } else {
     print(data.frame(Installed = old[, "Installed"],
-                     New = old[, "ReposVer"],
-                     Library = old[, "LibPath"]))
+        New = old[, "ReposVer"],
+        Library = old[, "LibPath"]))
     cat("\n")
     if (confirm(sprintf(" => Update these %d packages?", nrow(old)))) {
         cat(div, "\n", "==> Update packages\n\n")
