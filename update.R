@@ -26,9 +26,13 @@ old <- old.packages()
 if (is.null(old)) {
     cat(" => No packages to be updated\n")
 } else {
-    print(data.frame(Installed = old[, "Installed"],
+    ## Package names go in a column: the row names repeat when a package is in
+    ## more than one library, and data.frame() then drops them all
+    print(data.frame(Package = old[, "Package"],
+        Installed = old[, "Installed"],
         New = old[, "ReposVer"],
-        Library = old[, "LibPath"]))
+        Library = old[, "LibPath"],
+        row.names = NULL))
     cat("\n")
     if (confirm(sprintf(" => Update these %d packages?", nrow(old)))) {
         cat(div, "\n", "==> Update packages\n\n")
