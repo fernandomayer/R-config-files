@@ -13,11 +13,11 @@ c3sl <- "https://cran-r.c3sl.ufpr.br"
 bris <- "https://www.stats.bris.ac.uk/R"
 options(repos = c3sl)
 
-## Ask a [y/N] question on the terminal (readline() does not wait in Rscript)
+## Ask a [Y/n] question on the terminal (readline() does not wait in Rscript)
 confirm <- function(msg) {
-    cat(msg, "[y/N] ")
+    cat(msg, "[Y/n] ")
     ans <- readLines("stdin", n = 1)
-    length(ans) == 1 && grepl("^[YySs]$", ans)
+    length(ans) == 1 && grepl("^[YySs]?$", ans)
 }
 
 cat(div, "\n", "==> Packages with a new version\n\n")

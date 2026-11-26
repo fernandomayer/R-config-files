@@ -5,11 +5,11 @@
 
 div <- paste0("##", paste(rep("=", 70), collapse = ""))
 
-## Ask a [y/N] question on the terminal (readline() does not wait in Rscript)
+## Ask a [Y/n] question on the terminal (readline() does not wait in Rscript)
 confirm <- function(msg) {
-    cat(msg, "[y/N] ")
+    cat(msg, "[Y/n] ")
     ans <- readLines("stdin", n = 1)
-    length(ans) == 1 && grepl("^[YySs]$", ans)
+    length(ans) == 1 && grepl("^[YySs]?$", ans)
 }
 
 cat("\n ==> START INLA UPDATE\n", div, "\n\n")
